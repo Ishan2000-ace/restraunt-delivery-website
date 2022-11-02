@@ -5,6 +5,7 @@ import Locate from './locate.jpg'
 import Card from './Card'
 import Data from '../Data'
 import Search from './search.png'
+import './Style.css'
 
 
 export default function Restraunt() {
@@ -51,7 +52,7 @@ export default function Restraunt() {
   }
   return (
     <>
-    <div className='px-8 flex space-x-8 items-center py-4 shadow-md'>
+    <div className='nav'>
     <img src={Logo} alt="logo" height={40} width={40}/>
     <button onClick={()=>setMenu(Data)}>All</button>
     <button onClick={()=>filterItem("breakfast")}>BreakFast</button>
@@ -64,20 +65,22 @@ export default function Restraunt() {
   <option value="price" onClick={sort_by_price}>Price</option>
   <option value="availablity">Availablity</option>
 </select>
+
  
-<div className='px-30 flex justify-end'>
-  <input type="text" placeholder='Search' className='w-80' value={search} onChange={getSearch}/>
+<div className='search'>
+  <input type="text" placeholder='Search' className='bar' value={search} onChange={getSearch}/>
   <button onClick={searchItem}><img src={Search} alt="search-button" height={40} width={40}/></button>
 </div>
 
-<button className='flex items-center'><img src={Cart} alt="cart" height={40} width={40} />Cart</button>
+<button className='cart'><img src={Cart} alt="cart" height={40} width={40} />Cart</button>
 
-<div className='px-10 flex items-center'>
+<div className='location'>
 <img src={Locate} alt="location" width={40} height={40}/>
 location
 </div>
+
     </div>
-<div className='flex'><Card menuData={menuData}/></div>
+<div className='menu-card'><Card menuData={menuData}/></div>
 
     </>
   )
